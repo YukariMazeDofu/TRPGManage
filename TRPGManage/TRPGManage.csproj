@@ -124,7 +124,7 @@
     <None Include="ReadyRelease.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Ver093.txt">
+    <None Include="Ver094.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Compile Include="Mvvm\WebBrowserUtility.cs" />
