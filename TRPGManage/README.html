@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="HelpImgs/github-styles.css" rel="stylesheet"></link>
+    <title>TRPGManage ～あなたのTRPGライフのお手伝い～</title>
+</head>
+<body>
+<h1 id="trpgmanage-trpg">TRPGManage ～あなたのTRPGライフのお手伝い～</h1>
+<h2 id="section">■ 概要</h2>
+<p>　どどんとふでのTRPGプレイ支援ソフト<br />
+　DodontoF RESTAPI Client Software<br />
+　<br />
+　自身で立てた<a href="http://www.dodontof.com/">どどんとふ</a>サーバのWebIFを実行し、ダイスロールや各種リソース管理を行います。<br />
+　また、キャラクターデータを<a href="https://charasheet.vampire-blood.net/">キャラクター保管所</a>様より受信し作成します。<br />
+<br/></p>
+<h2 id="section-1">■ 作者</h2>
+<p>　いとこんにゃく<br />
+<br/></p>
+<h2 id="section-2">■ソフトウェア群</h2>
+<table>
+<thead>
+<tr>
+<th>　</th>
+<th>名前</th>
+<th>使用システム</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>◇</td>
+<td>TRPGManage</td>
+<td>どどんとふブラウザ コア</td>
+</tr>
+<tr>
+<td>├</td>
+<td>DfWGDB</td>
+<td>ダイスボット（プレーン）</td>
+</tr>
+<tr>
+<td>├</td>
+<td>DfWGAr</td>
+<td>アリアンロッド</td>
+</tr>
+<tr>
+<td>├</td>
+<td>DfWGCoC</td>
+<td>クトゥルフ神話TRPG</td>
+</tr>
+<tr>
+<td>├</td>
+<td>DfWGXX</td>
+<td>ダブルクロス</td>
+</tr>
+<tr>
+<td>└</td>
+<td>DfWGIS</td>
+<td>インセイン</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2 id="section-3">■ このソフトの利用について</h2>
+<p>　このソフトウェアはどどんとふ稼働サーバを自ら用意できる人向けのソフトウェアとなります。<br />
+　<a href="http://www.dodontof.com/DodontoF/README.html">どどんとふ作者様の作られたマニュアル</a> を確認の上、自身のサーバ上のどどんとふに利用してください。<br />
+　決して作者様鯖や公式鯖、他自ら立てたサーバ以外のあらゆるサーバへこのソフトを用いて通信を試みないでください。<br />
+　<br />
+　また、本ソフトにおいてキャラクターデータを<a href="https://charasheet.vampire-blood.net/">キャラクター保管所</a>様よりWebスクレイピングを用いて受信する機能があります。<br />
+　この機能に関しても連続受信等、運用者様に迷惑のかかるような行為はお止めください。</p>
+<p>　このソフトウェアは他所様に迷惑をかける意図で作成しておりません。<br />
+　意図的であるか否かに関わらず、他者に迷惑がかかるような事態となった場合公開を停止する場合があります。<br />
+<br/></p>
+<h2 id="section-4">■ 本ソフトウェア使用ライセンス</h2>
+<p>Copyright (c) 2018-2019 ItoKonnyaku（下記記載のライブラリ・画像を除くすべて）<br />
+　<br />
+以下に定める条件に従い、本ソフトウェアおよび関連文書のファイル（以下「ソフトウェア」）の複製を取得するすべての人に対し、ソフトウェアの使用を許可します。<br />
+本パッケージに含まれる全てのファイル・リソースの二次配布・有償販売・商用利用を禁止します。<br />
+下記記載のライブラリ・画像に関してはそれぞれのライセンスに従い利用してください。<br />
+　<br />
+上記の著作権表示および本許諾表示を、ソフトウェアのすべての複製または重要な部分に記載するものとします。<br />
+　<br />
+ソフトウェアは「現状のまま」で、明示であるか暗黙であるかを問わず、何らの保証もなく提供されます。ここでいう保証とは、特定の目的への適合性、および権利非侵害についての保証も含みますが、
+それに限定されるものではありません。 作者または著作権者は、契約行為、不法行為、またはそれ以外であろうと、ソフトウェアに起因または関連し、あるいはソフトウェアの使用またはその他の扱いによって
+生じる一切の請求、損害、その他の義務について何らの責任も負わないものとします。<br />
+　<br />
+　<strong>このソフトウェアを実行した時点で上記についてすべて承諾したものとします。</strong><br />
+<br/></p>
+<h2 id="section-5">■ 使用法</h2>
+<ul>
+<li><strong>肌で感じてください。</strong> 詳細な使用法は省きます。<br />
+<code>[設定]タブ</code>に自身で立てたサーバのURL( http(s):// ~~~~ /DodontoF )　<strong>末尾に/を入れない！</strong><br />
+サーバユーザ、サーバパスはDigest認証が存在する場合に入力してください。Basic認証もSaveData.xmlをいじればおそらく対応できます。<br />
+部屋番号はダイスを振る部屋を数字で指定、パスワードは部屋パスワードを入力。<br />
+ダイスボットは各システムのダイスボット英字を入れてください。(例：ダブルクロスはDoubleCross)<br />
+シークレットダイス機能はAPI制限上、「別の部屋で普通に振ったダイス結果」を引っ張ってきます。<br />
+あらかじめシークレットダイス専用部屋を作成の上、パスワードをかけて他参加者に見えないようにします。<br />
+SaveData.xmlのServer - ServerInfo - SeacretRoomNo 及び SeacretPasswordに部屋番号とパスワードを設定してください。</li>
+</ul>
+<br/>
+<h2 id="faq">■ FAQ</h2>
+<ul>
+<li><p><strong>送信したのに結果が表示されない！</strong></p>
+<ul>
+<li>部屋番号を間違えていませんか？<code>[設定]タブ</code>の部屋番号をご確認ください。</li>
+</ul>
+</li>
+<li><p><strong>起動時にソフトのウインドウが明後日の方向に行ってしまって操作できない！</strong></p>
+<ul>
+<li>一度タスクバー右クリックで終了し<code>[Shift]キー</code>を押し続けながら起動してください。Window位置が初期化されます。</li>
+</ul>
+</li>
+<li><p><strong>キャラデータを間違って編集・削除してしまった！起動前の状態に戻したい！</strong></p>
+<ul>
+<li><code>[設定]タブ/[保存せずに終了]</code>を押すと変更を保存せずに終了します。再起動で元通り！</li>
+<li><code>[ソフトの場所]\SaveData.xml.b[0-9]</code>というファイル名で履歴を保存しています。<br />
+戻したい時点のファイルを<code>SaveData.xml</code>に名前変更すればその時点での状態に戻ります。</li>
+<li>（アンドゥ／リドゥの実装予定は）ないです。</li>
+</ul>
+</li>
+<li><p><strong>ソフトウェアのアイコン画像選択が恣意的では？ボブは訝しんだ。</strong></p>
+<ul>
+<li>作者 <del>の性癖</del> が各システムで作成したキャラの立ち絵として使わせていただいたものです。<br />
+詳細は下記に記載しておりますのでご確認ください。<br />
+絵師様へ：大変ありがたく使わせていただいております。使用に不都合がある場合変更いたしますのでご連絡ください。
+<br></li>
+</ul>
+</li>
+</ul>
+<h2 id="section-6">■ ソフトウェアのアップデートについて</h2>
+<ol>
+<li>旧ソフトを起動し、引継したいキャラクターを選択し<code>[ExportXML]</code>ボタンを押してください。<br />
+<code>[ソフトの場所]\Export\[キャラクター名(TRPGシステム)].xml</code>が作成されます。<br />
+必要なキャラクター分個別に実施してください。</li>
+<li>新ソフトのZipファイルを解凍し、全ファイルをコピー、旧ソフトに上書きします。</li>
+<li>新ソフトを起動し、<code>[キャラ]タブ/[キャラ選択・移動・削除]</code>に先程のxmlファイルをD&amp;Dします。<br />
+複数ファイルをまとめてコピー可能です。</li>
+</ol>
+<p>　※ 破壊的アップデートがあった場合、キャラクターインポートが出来ない場合があります。<br />
+　　 その際は諦めてください。そうなる場合管理者よりアナウンスします。<br />
+<br/></p>
+<h2 id="udonarium">■ Udonarium連携について</h2>
+<ol>
+<li>使用したいキャラクターを選択し<code>[ExportUdoZip]</code>ボタンを押してください。<br />
+<code>[ソフトの場所]\Export\[キャラクター名(TRPGシステム)].zip</code>が作成されます。<br />
+<U>どどんとふ上でキャラ画像を設定していた場合、現在選択している画像も取り込まれます。</U></li>
+<li>Udonariumをブラウザ(Chrome推奨)で起動し、作成したZipファイルをD&amp;Dします。</li>
+</ol>
+<p>　※ Ver089時点ではDfWGCoC以外はあまり実用的ではありません！<br />
+<br/></p>
+<h2 id="section-7">■ バージョン情報</h2>
+<table>
+<thead>
+<tr>
+<th>Ver</th>
+<th>日付</th>
+<th>詳細</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>094</td>
+<td>19/12/06</td>
+<td>Github公開向けにソースコードの整理、Github公開</td>
+</tr>
+<tr>
+<td>093</td>
+<td>19/09/30</td>
+<td><b>[mod]</b>DfWGISアビリティ、コネクション、アイテムの追加。</td>
+</tr>
+<tr>
+<td>092</td>
+<td>19/09/29</td>
+<td><b>[new]</b>DfWGISの実装<br/><b>[fix]</b>CoC起動後、初回時にSANチェックができない問題の修正。</td>
+</tr>
+<tr>
+<td>091</td>
+<td>19/04/12</td>
+<td>ダイスカウンターに+D3追加<br/>システム毎にダイスロール受信結果を変える(DfWGXXダメージ算出用)<br/>エフェクト・コンボコピーの追加(DfWGXX)、バグ修正(DfWGXX)</td>
+</tr>
+<tr>
+<td>090</td>
+<td>19/04/07</td>
+<td>サーバーSync機能追加。キャラ等削除時の挙動修正(選択なし→直上選択)<br/>セーブ履歴機能追加。タイムアウト見直し(30sec)</td>
+</tr>
+<tr>
+<td>089</td>
+<td>19/04/03</td>
+<td>カットイン結果表示。シート受信中の再受信阻止。非同期処理強化。<br/>補正値上下限の見直し。性能改善、リファクタリング。<br/>README.htmlの整備(このファイル)</td>
+</tr>
+<tr>
+<td>088</td>
+<td>19/03/23</td>
+<td>起動時に[Shift]押下でWindow表示を初期化機能追加</td>
+</tr>
+<tr>
+<td>0872</td>
+<td>19/03/16</td>
+<td>バグ修正（DfWGXX 戦闘メジャー行為の補正反映が出来ていない部分の修正）</td>
+</tr>
+<tr>
+<td>0871</td>
+<td>19/03/02</td>
+<td>UdonaExport機能、画像表示エラーの修正、Exportフォルダ自動生成失敗バグの修正</td>
+</tr>
+<tr>
+<td>087</td>
+<td>19/02/24</td>
+<td>キャラクターインポート・エクスポート実装</td>
+</tr>
+<tr>
+<td>086</td>
+<td>19/02/23</td>
+<td>SSL対応</td>
+</tr>
+<tr>
+<td>085</td>
+<td>19/02/08</td>
+<td>DfWGXXの実装</td>
+</tr>
+<tr>
+<td>084</td>
+<td>19/01/28</td>
+<td>DfWGDBの実装</td>
+</tr>
+<tr>
+<td>083</td>
+<td>18/11/19</td>
+<td>非同期実行(ダイス送信、キャラシー受信等)時のタイムアウト実装(60sec)<br/>バグ修正(ダイス振ってから動作止まる原因の除去)</td>
+</tr>
+<tr>
+<td>082b</td>
+<td>18/11/17</td>
+<td>CoCSan値の最大値が20になっていたのを修正</td>
+</tr>
+<tr>
+<td>082</td>
+<td>18/11/13</td>
+<td>カットイン実装</td>
+</tr>
+<tr>
+<td>081b</td>
+<td>18/11/12</td>
+<td>スキルコスト欄の[Add]の実装</td>
+</tr>
+<tr>
+<td>081</td>
+<td>18/11/12</td>
+<td>改良版公開</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2 id="section-8">■ 使用ライブラリ</h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作者</th>
+<th>ライセンス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DynamicJson</td>
+<td>neuecc</td>
+<td>MS-PL</td>
+</tr>
+<tr>
+<td>HTMLAgilityPack</td>
+<td>ZZZ Projects<br/>Simon Mourrier<br/>Jeff Klawiter<br/>Stephan Grell</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td>NLog</td>
+<td>Jarek Kowalski<br/>Kim Christensen<br/>Julian Verdurmen</td>
+<td>BSD 3-Clause &quot;New&quot; or &quot;Revised&quot; License</td>
+</tr>
+<tr>
+<td>CommonServiceLocator</td>
+<td>Microsoft</td>
+<td>MS-PL</td>
+</tr>
+<tr>
+<td>Prism</td>
+<td>Brian Lagunas<br/>Bart Lannoeye<br/>Dan Siegel</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td>gong-wpf-dragdrop</td>
+<td>punker76</td>
+<td>BSD 3-Clause &quot;New&quot; or &quot;Revised&quot; License</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<h2 id="section-9">■ 使用アイコンについて</h2>
+<p><em><strong>「可愛いは、正義。」</strong></em><br />
+ライセンスは各参照元をご確認ください。（基本的に使用改変自由・二次配布不可）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">アイコン</th>
+<th>システム</th>
+<th>作者</th>
+<th>参照元</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="HelpImgs/DfWGDB.png" alt="DfWGDB" /></td>
+<td>DfWGDB</td>
+<td>からい氏</td>
+<td><a href="http://seiga.nicovideo.jp/seiga/im7760810">【素材】東北きりたん立ち絵</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="HelpImgs/DfWGAr.png" alt="DfWGAr" /></td>
+<td>DfWGAr</td>
+<td>からい氏</td>
+<td><a href="http://seiga.nicovideo.jp/seiga/im6232152">【素材】結月ゆかりさん立ち絵</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="HelpImgs/DfWGCoC.png" alt="DfWGCoC" /></td>
+<td>DfWGCoC</td>
+<td>八塚氏</td>
+<td><a href="https://github.com/spinalien/voiceroid-portraits">八塚式VOICEROID立ち絵(紲星あかり)</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="HelpImgs/DfWGXX.png" alt="DfWGXX" /></td>
+<td>DfWGXX</td>
+<td>blueberry氏</td>
+<td><a href="http://seiga.nicovideo.jp/seiga/im7841539">羊☆あかり</a></td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="HelpImgs/DfWGIS.png" alt="DfWGIS" /></td>
+<td>DfWGIS</td>
+<td>緒咲枕氏</td>
+<td><a href="http://seiga.nicovideo.jp/seiga/im7107071">【素材】琴葉姉妹JK風立ち絵素材【公開】</a></td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
