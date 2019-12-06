@@ -248,12 +248,12 @@ namespace ItoKonnyaku.TrpgManage
 
 #if true    //サーバ情報出力
             SerializeToXml($@"{ProgramPath}\Data\InitialData.xml", this.Data);
-            await Task.Run(() => this.UpdateStatus(@"現在のサーバ設定を\Data\InitialServer.xmlとして出力しました。")).ConfigureAwait(false);
+            await Task.Run(() => this.UpdateStatus(@"現在の設定を\Data\InitialData.xmlとして出力しました。")).ConfigureAwait(false);
 #endif
 
 #else
-            SerializeToXml($@"{ProgramPath}\Data\InitialServer.xml", this.Data.Server.ServerInfo);
-            await Task.Run(() => this.UpdateStatus(@"現在のサーバ設定を\Data\InitialServer.xmlとして出力しました。")).ConfigureAwait(false);
+            SerializeToXml($@"{ProgramPath}\Data\InitialData.xml", this.Data);
+            await Task.Run(() => this.UpdateStatus(@"現在の設定を\Data\InitialData.xmlとして出力しました。")).ConfigureAwait(false);
 #endif
         }
 
