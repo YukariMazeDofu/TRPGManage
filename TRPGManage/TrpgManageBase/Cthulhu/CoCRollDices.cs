@@ -78,7 +78,7 @@ namespace ItoKonnyaku.TrpgManage
             this.SendRollDice.TargetValue += this.CorrectTargetValue;
 
             //成長の場合不等号逆転
-            this.SendRollDice.Inequality = this.IsGrowth ? ">=" : "<=";
+            this.SendRollDice.Inequality = this.IsGrowth ? ">" : "<=";
             var growthText = this.IsGrowth ? " <成長判定>" : "";
 
             //1-99にまるめ
