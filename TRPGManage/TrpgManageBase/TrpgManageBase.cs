@@ -813,9 +813,11 @@ namespace ItoKonnyaku.TrpgManage
                     }
                     string shash;
                     using (var fs = new FileStream(imgPath, FileMode.Open, FileAccess.Read))
+                    using (var mySHA256 = SHA256.Create())
                     {
-                        byte[] bhash = SHA256.Create().ComputeHash(fs);
+                        byte[] bhash = mySHA256.ComputeHash(fs);
                         shash = BitConverter.ToString(bhash).Replace("-", "").ToLower();
+
                     }
                     var destPath = $@"{ProgramPath}\Data\{shash}{imgExt}";
                     if (File.Exists(destPath)) File.Delete(destPath);
